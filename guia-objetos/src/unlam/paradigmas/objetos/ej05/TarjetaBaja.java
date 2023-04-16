@@ -2,28 +2,29 @@ package unlam.paradigmas.objetos.ej05;
 
 public class TarjetaBaja {
 
-	// completar
+	private double saldo;
+	private int viajesEnColectivo;
+	private int viajesEnSubte;
 	
 	/**
 	 * post: saldo de la Tarjeta en saldoInicial.
 	 */
 	public TarjetaBaja(double saldoInicial) {
-		// completar
+		this.saldo = saldoInicial;
 	}
 
 	/**
 	 * post: devuelve el saldo actual de la Tarjeta
 	 */
 	public double obtenerSaldo() {
-		// completar
-		return -1;
+		return this.saldo;
 	}
 
 	/**
 	 * post: agrega el monto al saldo de la Tarjeta.
 	 */
 	public void cargar(double monto) {
-		// completar
+		this.saldo += monto;
 	}
 
 	/**
@@ -31,38 +32,37 @@ public class TarjetaBaja {
 	 * colectivo.
 	 */
 	public void pagarViajeEnColectivo() {
-		// completar
+		this.saldo -= 39.59;
+		this.viajesEnColectivo++;
 	}
 
 	/**
 	 * pre : saldo suficiente. post: utiliza 34.50 del saldo para un viaje en subte.
 	 */
 	public void pagarViajeEnSubte() {
-		// completar
+		this.saldo -= 34.50;
+		this.viajesEnSubte++;
 	}
 
 	/**
 	 * post: devuelve la cantidad de viajes realizados.
 	 */
 	public int contarViajes() {
-		// completar
-		return -1;
+		return this.viajesEnColectivo + this.viajesEnSubte;
 	}
 
 	/**
 	 * post: devuelve la cantidad de viajes en colectivo.
 	 */
 	public int contarViajesEnColectivo() {
-		// completar
-		return -1;
+		return this.viajesEnColectivo;
 	}
 
 	/**
 	 * post: devuelve la cantidad de viajes en subte.
 	 */
 	public int contarViajesEnSubte() {
-		// completar
-		return -1;
+		return this.viajesEnSubte;
 	}
 
 }
