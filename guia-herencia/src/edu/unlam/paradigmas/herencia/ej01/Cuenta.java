@@ -33,8 +33,16 @@ public class Cuenta {
 		return operacion;
 	}
 
-	public int getSaldo() {
+	public int consultarSaldo() {
 		return this.saldo;
 	}
+	
+	public void transferir(int cantidad, Cuenta destino) {
+		if(this.extraer(cantidad) != 0) {
+			destino.depositar(cantidad);
+		}
+	}
+
+	
 
 }
