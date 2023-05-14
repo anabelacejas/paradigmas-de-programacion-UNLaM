@@ -1,19 +1,40 @@
 package edu.unlam.paradigmas.herencia.ej01;
 
 public class Cuenta {
-	public int saldo;
-	
-	public static void main(String[] args) {
-		Cuenta miCuenta = new Cuenta();
-		System.out.println(miCuenta.saldo); // 0
-		miCuenta.saldo += 1000;
-		System.out.println(miCuenta.saldo); // 1000
-		miCuenta.saldo -= 550;
-		System.out.println(miCuenta.saldo); // 450
-	}
-	
+	private int saldo;
+
 	public Cuenta() {
 		this.saldo = 0;
 	}
-	
+
+	public int extraer(int cantidad) {
+		int cantExtraida = 0;
+		try {
+			if (cantidad > 0 && this.saldo > cantidad) {
+				this.saldo -= cantidad;
+				cantExtraida = cantidad;
+			} else {
+				throw new Exception();
+			}
+		} catch (Exception e) {
+			System.out.println("no hay saldo suficiente");
+		}
+		
+		return cantExtraida;
+	}
+
+	public boolean depositar(int cantidad) {
+		boolean operacion;
+
+		if (operacion = (cantidad > 0)) {
+			this.saldo += cantidad;
+		}
+
+		return operacion;
+	}
+
+	public int getSaldo() {
+		return this.saldo;
+	}
+
 }
